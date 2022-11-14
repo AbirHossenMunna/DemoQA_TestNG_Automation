@@ -45,4 +45,3 @@ allure serve allure-results
 
 #### Here are the suites of this project:
 <img width="920" alt="Allure_Suits" src="https://user-images.githubusercontent.com/59090637/201707429-c5dc81ac-0be7-4ccb-9939-cdc4230f2733.PNG">
-W
