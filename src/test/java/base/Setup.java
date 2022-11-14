@@ -1,8 +1,11 @@
 package base;
 
+import Utils.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -21,8 +24,20 @@ public class Setup {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
 
     }
-//    @AfterTest
-//    public void closeBrowser(){
-//        driver.close();
-//    }
+    @AfterMethod
+    public void screenShot(ITestResult result){
+        if(ITestResult.FAILURE==result.getStatus()){
+            try{
+                Utils utils=new Utils();
+                utils.takeScreenshot(driver);
+            }
+            catch (Exception exception){
+                System.out.println(exception.toString());
+            }
+        }
+    }
+    @AfterTest
+    public void closeBrowser(){
+        driver.close();
+    }
 }
