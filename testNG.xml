@@ -1,0 +1,12 @@
+<suite thread-count="1" verbose="1" name="E-commerce portal automation">
+    <test name="FormFillUp For TextBox">
+        <classes>
+            <class name="TestRunner.TextBoxTestRunner"/>
+        </classes>
+    </test>
+    <test name="FormFillUp For User">
+        <classes>
+            <class name="TestRunner.FormTestRunner"/>
+        </classes>
+    </test>
+</suite>
